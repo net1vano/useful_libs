@@ -12,5 +12,3 @@ def binary(array: list, key: int, left: int = 0, right: int | None = None) -> in
         return binary(array, key, mid+1, right)
     else:
         return binary(array, key, left, mid-1)
-
-print(binary([i+1 for i in  range(0,100)], 22))

@@ -11,16 +11,3 @@ def deep_get(data: dict | list, *keys, default=None) -> Any:
         else:
             return default
     return current
-
-data = {
-    "user": {
-        "address": {
-            "city": "Moscow",
-            "zip": "12345"
-        }
-    },
-    "roles": ["admin", "moderator"]
-}
-
-value = deep_get(data, "user", "address", "city")
-print(value)

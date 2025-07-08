@@ -24,8 +24,3 @@ def merge(left, right, reverse: bool = False):
 
     merged.extend(left or right)
     return merged
-
-
-print(sort_merge([2,4,3,1,6,8,9,11,0]))
-
-
