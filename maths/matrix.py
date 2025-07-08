@@ -51,14 +51,25 @@ class Matrix:
             raise TypeError("Число должно быть int")
         return Matrix(new)
 
+    def __iter__(self):
+        for i in range(self.rows):
+            for j in range(self.cols):
+                yield self.matrix[i][j]
+
+    def __array__(self):
+        return list(*self)
+
+    def __len__(self):
+        return self.cols * self.rows
+
+    def __repr__(self):
+        matrix_str = '\n'.join([str(row) for row in self.matrix])
+        return f"Matrix[\n{matrix_str}\n]"
+
     def transpose(self):
         new = [[0 for _ in range(self.rows)] for _ in range(self.cols)]
         for i in range(self.rows):
             for j in range(self.cols):
                 new[j][i] = self.matrix[i][j]
         return Matrix(new)
-
-    def __repr__(self):
-        matrix_str = '\n'.join([str(row) for row in self.matrix])
-        return f"Matrix[\n{matrix_str}\n]"
 

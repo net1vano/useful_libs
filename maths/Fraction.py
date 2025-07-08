@@ -93,10 +93,3 @@ class Fraction:
 
     def __rtruediv__(self, other):
         return Fraction(other, 1) / self
-
-
-fr1 = Fraction(2, 4)
-fr2 = Fraction(2, 5)
-fr3 = fr1 * fr2
-print(fr1 <= fr2)
-print(fr3)
